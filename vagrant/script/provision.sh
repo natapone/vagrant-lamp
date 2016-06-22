@@ -28,7 +28,7 @@ repositories_go() {
 
 update_go() {
 	# Update the server
-	apt-get update
+	sudo apt-get -y update
 	# apt-get -y upgrade
 }
 
@@ -138,6 +138,14 @@ mysql_go() {
 
 	service mysql restart
 	update-rc.d apache2 enable
+}
+
+perl_go() {
+    # Basic stuff
+    sudo apt-get install -y curl
+
+    # Cpanminus
+    curl -L https://cpanmin.us | perl - --sudo App::cpanminus
 }
 
 main
