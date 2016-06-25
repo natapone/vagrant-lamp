@@ -11,15 +11,15 @@ project_web_root="src"
 
 # This function is called at the very bottom of the file
 main() {
-	repositories_go
-	update_go
-	network_go
-	tools_go
-	apache_go
-	mysql_go
-	php_go
     perl_go
-	autoremove_go
+    repositories_go
+    update_go
+    network_go
+    tools_go
+    apache_go
+    mysql_go
+    php_go
+    autoremove_go
 }
 
 repositories_go() {
@@ -141,11 +141,21 @@ mysql_go() {
 }
 
 perl_go() {
+    # fix perl local
+    echo -e 'LANGUAGE=en_US.UTF-8
+    LANG=en_US.UTF-8
+    LC_ALL=en_US.UTF-8
+    LC_CTYPE=en_US.UTF-8' > /etc/default/locale
+
     # Basic stuff
     sudo apt-get install -y curl
 
     # Cpanminus
     curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+    
+    
+    echo "export PERL5LIB=/home/vagrant/perl5:/home/vagrant/project/wowbox_analytic/lib" >> /home/vagrant/.bashrc
+    
 }
 
 main
