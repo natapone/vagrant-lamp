@@ -149,14 +149,14 @@ perl_go() {
 
     # Basic stuff
     sudo apt-get install -y curl
-    sudi apt-get install -y libwww-curl-perl
-    
+    sudo apt-get install -y libwww-curl-perl
+
     # Cpanminus
     curl -L https://cpanmin.us | perl - --sudo App::cpanminus
-    
-    
+
+
     echo "export PERL5LIB=/home/vagrant/perl5:/home/vagrant/project/wowbox_analytic/lib" >> /home/vagrant/.bashrc
-    
+
 }
 
 main
