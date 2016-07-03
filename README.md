@@ -41,6 +41,9 @@ Externally the MySQL server is available at port 8889, and when running on the V
 Username: root
 Password: root
 
+##### Connect to Mysql from host
+$ mysql -u root -p -h 127.0.0.1 -P 8889
+
 Technical Details
 -----------------
 * Ubuntu 14.04 64-bit
