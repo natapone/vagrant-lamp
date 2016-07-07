@@ -116,7 +116,7 @@ mysql_go() {
     # Install MySQL
 	echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
 	echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
-	apt-get -y install mysql-client mysql-server
+	apt-get -y install mysql-client mysql-server libmysqlclient-dev
 
 	sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" ${mysql_config_file}
 
