@@ -150,6 +150,7 @@ perl_go() {
     # Basic stuff
     sudo apt-get install -y curl
     sudo apt-get install -y libwww-curl-perl
+    sudo apt-get install -y libxml-libxml-perl
 
     # Cpanminus
     curl -L https://cpanmin.us | perl - --sudo App::cpanminus
